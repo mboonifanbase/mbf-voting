@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mbooni Fan Base Election Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Login Modal -->
+  <div id="loginModal">
+    <div id="loginModalContent">
+      <h1>MBOONI FAN BASE ELECTION PORTAL</h1>
+      <h2>Enter Your ID/Passport/Military Number</h2>
+      <input type="text" id="userID" placeholder="Enter your number" />
+      <button id="loginButton">Proceed</button>
+      <p id="errorMessage"></p>
+    </div>
+  </div>
+
+  <!-- Voting Container -->
+  <div class="container" id="votingContainer" style="display: none;">
+    <img src="https://shorturl.at/UwpXN" alt="Mbooni Fan Base Logo" class="logo">
+    <h1>Mbooni Fan Base Election Portal</h1>
+    <!-- Greeting for voter -->
+    <p id="voterGreeting" style="font-size: 1.2rem; color: #2e7d32; text-align: center;"></p>
+    <div class="form-wrapper">
+      <div class="column">
+        <h2>Vice Chairperson</h2>
+        <form id="votingForm">
+          <div class="position">
+            <label for="viceChairperson">Vote for Vice Chairperson (Female only):</label>
+            <div class="candidate">
+              <input type="radio" name="viceChairperson" value="Jacinta" id="vice-jacinta">
+              <label for="vice-jacinta">Jacinta</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="viceChairperson" value="Ruth" id="vice-ruth">
+              <label for="vice-ruth">Ruth</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="viceChairperson" value="Sylvia" id="vice-sylvia">
+              <label for="vice-sylvia">Sylvia</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="viceChairperson" value="Liz" id="vice-liz">
+              <label for="vice-liz">Liz (Diaspora)</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="column">
+        <h2>Member</h2>
+        <form id="votingFormMember">
+          <div class="position">
+            <label for="member">Vote for Member:</label>
+            <div class="candidate">
+              <input type="radio" name="member" value="Snr Uamba" id="member-snr-uamba">
+              <label for="member-snr-uamba">Snr Uamba</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="member" value="Domih" id="member-domih">
+              <label for="member-domih">Domih</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="member" value="Pepsi Jr" id="member-pepsi-jr">
+              <label for="member-pepsi-jr">Pepsi Jr</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="member" value="Fabian" id="member-fabian">
+              <label for="member-fabian">Fabian</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="member" value="Rono" id="member-rono">
+              <label for="member-rono">Rono</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="member" value="Kisia Nzuki" id="member-kisia-nzuki">
+              <label for="member-kisia-nzuki">Kisia Nzuki</label>
+            </div>
+            <div class="candidate">
+              <input type="radio" name="member" value="Oti" id="member-oti">
+              <label for="member-oti">Oti</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <button id="submitVotes">Submit Votes</button>
+    <p id="message"></p>
+    <div id="results">
+      <h2>Results</h2>
+      <div id="viceResults"></div>
+      <div id="memberResults"></div>
+    </div>
+  </div>
+
+  <!-- Admin Management Section -->
+  <div class="container" id="adminContainer" style="display: none;">
+    <h1>Admin Panel</h1>
+    <div class="admin-actions">
+      <!-- Reset Votes -->
+      <button id="resetVotes">Reset All Votes</button>
+      <p id="adminMessage"></p>
+
+      <!-- Add/Remove Candidate -->
+      <h2>Manage Candidates</h2>
+      <label for="candidateName">Candidate Name:</label>
+      <input type="text" id="candidateName" placeholder="Enter candidate name" />
+      <label for="positionSelect">Position:</label>
+      <select id="positionSelect">
+        <option value="viceChairperson">Vice Chairperson</option>
+        <option value="member">Member</option>
+      </select>
+      <button id="addCandidateButton">Add Candidate</button>
+      <button id="removeCandidateButton">Remove Candidate</button>
+
+      <!-- Manage Voters -->
+      <h2>Manage Voters</h2>
+      <label for="voterID">Voter ID:</label>
+      <input type="text" id="voterID" placeholder="Enter voter ID" />
+      <button id="addVoterButton">Add Voter</button>
+      <button id="removeVoterButton">Remove Voter</button>
+
+      <!-- Lock/Unlock Voting -->
+      <h2>Voting Lock</h2>
+      <button id="toggleVotingLockButton">Lock/Unlock Voting</button>
+
+      <!-- Export Results -->
+      <h2>Export Results</h2>
+      <button id="exportResultsButton">Export Results as CSV</button>
+
+      <!-- Announce Final Results -->
+      <h2>Announce Results</h2>
+      <button id="announceResultsButton">Announce Final Results</button>
+    </div>
+  </div>
+
+  <footer style="
+    margin-top: 50px; 
+    background-color: #2e7d32; 
+    color: white; 
+    text-align: center; 
+    padding: 15px; 
+    font-size: 14px;
+  ">
+    Mbooni Fan Base © <span id="currentYear"></span>. Powered by eCODES
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
